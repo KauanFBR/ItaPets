@@ -2,6 +2,10 @@
 <html lang="pt-BR">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleContato.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - ItaPets</title>
@@ -13,37 +17,52 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
+        <p>
+            <a href="index.html">Início</a><br>
+            <a href="contato.html">Contato</a>
+        </p>
     </nav>
 
-    <main>
-        <p>Tem alguma dúvida sobre nossos produtos ou serviços? Entre em contato conosco! Preencha o formulário abaixo e
-            responderemos o mais breve possível.</p>
+<main class="form-container">
+    <form>
+        <p class="titulo">Formulário de Contato</p>
 
-        <form action="mailto:contato@itapets.com.br" method="post" enctype="text/plain">
-            <fieldset>
-                <legend>Dados de Contato</legend>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
 
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="seuemail@gmail.com">
 
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
 
-                <label for="telefone">Telefone:</label><br>
-                <input type="tel" id="telefone" name="telefone"><br><br>
+        <p class="subtitulo">Gênero</p>
+        <div class="opcoes-inline">
+            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+        </div>
 
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="6" cols="50" required></textarea><br><br>
+        <p class="subtitulo">Serviços de interesse</p>
+        <div class="opcoes-colunas">
+            <label><input type="checkbox" value="banho"> Banho</label>
+            <label><input type="checkbox" value="tosa"> Tosa</label>
+            <label><input type="checkbox" value="consulta"> Consulta Veterinária</label>
+        </div>
 
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Limpar">
-            </fieldset>
-        </form>
-    </main>
+        <label for="pets">Tipo de Pet</label>
+        <select id="pets">
+            <option>Selecione...</option>
+            <option>Cachorro</option>
+            <option>Gato</option>
+            <option>Pássaro</option>
+            <option>Roedor</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+
+
 
     <footer>
         <p>&copy; 2025 ItaPets - Todos os direitos reservados.</p>
