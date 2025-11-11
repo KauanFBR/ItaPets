@@ -23,46 +23,49 @@
         </p>
     </nav>
 
-<main class="form-container">
-    <form>
-        <p class="titulo">Formulário de Contato</p>
+    <main class="form-container">
+        <form>
+            <p class="titulo">Formulário de Contato</p>
 
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Digite seu nome">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="seuemail@gmail.com">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="seuemail@gmail.com">
+                </div>
+            </div>
 
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+            <p>Mensagem</p>
+            <textarea id="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+            <p class="subtitulo">Gênero</p>
+            <div class="opcoes-inline">
+                <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+            </div>
 
-        <p class="subtitulo">Gênero</p>
-        <div class="opcoes-inline">
-            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
-            <label><input type="radio" name="genero" value="feminino"> Feminino</label>
-        </div>
+            <p class="subtitulo">Serviços de interesse</p>
+            <div class="opcoes-colunas">
+                <label><input type="checkbox" value="banho"> Banho</label>
+                <label><input type="checkbox" value="tosa"> Tosa</label>
+                <label><input type="checkbox" value="consulta"> Consulta Veterinária</label>
+            </div>
 
-        <p class="subtitulo">Serviços de interesse</p>
-        <div class="opcoes-colunas">
-            <label><input type="checkbox" value="banho"> Banho</label>
-            <label><input type="checkbox" value="tosa"> Tosa</label>
-            <label><input type="checkbox" value="consulta"> Consulta Veterinária</label>
-        </div>
+            <p>Tipo de Pet</p>
+            <select id="pets">
+                <!-- <option>Selecione...</option> -->
+                <option>Cachorro</option>
+                <option>Gato</option>
+                <option>Pássaro</option>
+                <option>Roedor</option>
+            </select>
 
-        <label for="pets">Tipo de Pet</label>
-        <select id="pets">
-            <option>Selecione...</option>
-            <option>Cachorro</option>
-            <option>Gato</option>
-            <option>Pássaro</option>
-            <option>Roedor</option>
-        </select>
-
-        <button type="submit">Enviar</button>
-    </form>
-</main>
-
-
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
 
     <footer>
         <p>&copy; 2025 ItaPets - Todos os direitos reservados.</p>
