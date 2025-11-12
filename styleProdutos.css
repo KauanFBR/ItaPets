@@ -13,7 +13,6 @@ body {
     min-height: 100vh;
 }
 
-
 header {
     background-color: #f4a261;
     padding: 20px;
@@ -25,15 +24,21 @@ header h1 {
     font-size: 28px;
 }
 
+
 main {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
-    text-align: center;
     flex: 1;
-    align-content: start;
-    align-items: start;
+
+    display: flex;
+    flex-direction: row;       
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;                 
+    flex-wrap: wrap;           
 }
+
 
 main img {
     width: 350px;
@@ -41,33 +46,34 @@ main img {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+}
+
+
+main .conteudo {
+    max-width: 500px;
+    text-align: left;
 }
 
 main p {
     font-size: 18px;
     line-height: 1.6;
     margin: 20px 0;
+    text-align: justify;
 }
 
-main h2 {
+main dt {
     margin-top: 25px;
+    margin-bottom: 8px;
     font-size: 22px;
     color: #2a9d8f;
 }
 
 main dl {
     list-style: disc;
-    text-align: left;
-    margin: 20px auto;
-    max-width: 500px;
+    margin: 20px 0;
     padding-left: 20px;
 }
 
-main dl dt {
-    margin-bottom: 8px;
-    font-size: 17px;
-}
 
 main a {
     display: inline-block;
@@ -91,18 +97,24 @@ footer {
     margin-top: auto;
 }
 
-
 @media (max-width: 600px) {
-
     main {
+        flex-direction: column;  
+        align-items: center;
         padding: 10px;
     }
 
     main img {
         width: 80%;
+        margin-bottom: 20px;
     }
 
-    main p, main dl dt {
+    main p,
+    main dl dt {
         font-size: 16px;
+    }
+
+    main .conteudo {
+        text-align: center;
     }
 }

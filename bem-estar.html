@@ -2,62 +2,84 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Estar - ItaPets</title>
+    <link rel="icon" type="image/x-icon" href="img/logo-itapets.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-Estar - ItaPets</title>
 </head>
 
 <body>
-    <header>
-        <h1>Itens para bem-estar do seu pet!</h1>
-    </header>
+    <main class="layout">
 
-    <nav>
-        <h2>Categorias</h2>
-        <p>
-            <a href="index.html">Início</a><br>
-            <a href="brinquedo.html">Brinquedo</a><br>
-            <a href="bem-estar.html">Bem-Estar</a><br>
-            <a href="alimentacao.html">Alimentação</a>
-        </p>
-    </nav>
+        <header class="header-grid">
+            <img src="img/logo-itapets.ico" alt="Logo ItaPets">
+            <h1>Itens para bem-estar do seu pet!</h1>
+        </header>
 
-    <main>
-        <article>
-            <h3><a href="escova-removedora-de-pelos.html">Escova Removedora de Pelos</a></h3>
-            <img src="img/escovaP.webp" alt="Escova Removedora de Pelos" width="100" height="100">
-            <p>Escova eficiente para remover pelos mortos e evitar nós.</p>
-        </article>
-        <article>
-            <h3><a href="shampoo-para-caes-pelos-claros.html">Shampoo Hipoalergênico</a></h3>
-            <img src="img/shampooP.webp" alt="Shampoo Hipoalergênico" width="100" height="100">
-            <p>Shampoo suave e hipoalergênico para pelagens sensíveis e claras.</p>
-        </article>
-        <article>
-            <h3><a href="caixa-de-transporte-gg.html">Caixa de Transporte</a></h3>
-            <img src="img/caixa-de-transporteP.webp" alt="Caixa de Transporte" width="100" height="100">
-            <p>Caixa segura e confortável para transporte de pets.</p>
-        </article>
-        <article>
-            <h3><a href="cama-ortopedica-para-pets.html">Cama Ortopédica</a></h3>
-            <img src="img/caminhaP.webp" alt="Cama Ortopédica" width="100" height="100">
-            <p>Cama confortável com espuma ortopédica para pets de todos os tamanhos.</p>
-        </article>
-        <article>
-            <h3><a href="coleira-peitoral-ajustavel-para-caes.html">Coleira Ajustável</a></h3>
-            <img src="img/coleiraP.webp" alt="Coleira Ajustável" width="100" height="100">
-            <p>Coleira confortável e resistente com fecho de segurança, modelo peitoral.</p>
-        </article>
+
+        <nav class="nav-grid">
+            <h2>Categorias</h2>
+            <p>
+                <a href="index.html">Início</a>
+                <a href="brinquedo.html">Brinquedos</a>
+                <a href="bem-estar.html">Bem-Estar</a>
+                <a href="alimentacao.html">Alimentação</a>
+            </p>
+        </nav>
+
+
+        <div class="GridContainer">
+            <article>
+                <a href="escova-removedora-de-pelos.html">
+                    <img src="img/escovaP.webp" alt="Escova Removedora de Pelos">
+                    <h3>Escova Removedora de Pelos</h3>
+                    <p>Escova eficiente para remover pelos mortos e evitar nós.</p>
+                </a>
+            </article>
+
+            <article>
+                <a href="shampoo-para-caes-pelos-claros.html">
+                    <img src="img/shampooP.webp" alt="Shampoo Hipoalergênico">
+                    <h3>Shampoo Hipoalergênico</h3>
+                    <p>Shampoo suave e hipoalergênico para pelagens sensíveis e claras.</p>
+                </a>
+            </article>
+
+            <article>
+                <a href="caixa-de-transporte-gg.html">
+                    <img src="img/caixa-de-transporteP.webp" alt="Caixa de Transporte">
+                    <h3>Caixa de Transporte</h3>
+                    <p>Caixa segura e confortável para transporte de pets.</p>
+                </a>
+            </article>
+
+            <article>
+                <a href="cama-ortopedica-para-pets.html">
+                    <img src="img/caminhaP.webp" alt="Cama Ortopédica">
+                    <h3>Cama Ortopédica</h3>
+                    <p>Cama confortável com espuma ortopédica para pets de todos os tamanhos.</p>
+                </a>
+            </article>
+
+            <article>
+                <a href="coleira-peitoral-ajustavel-para-caes.html">
+                    <img src="img/coleiraP.webp" alt="Coleira Ajustável">
+                    <h3>Coleira Ajustável</h3>
+                    <p>Coleira confortável e resistente com fecho de segurança, modelo peitoral.</p>
+                </a>
+            </article>
+        </div>
+
+
+        <footer class="footer-grid">
+            <a href="contato.html">Entre em contato</a>
+            <p>&copy; 2025 ItaPets - Todos os direitos reservados.</p>
+        </footer>
     </main>
-
-    <footer>
-        <dt><a href="contato.html">Entre em contato</a></dt>
-        <p>&copy; 2025 ItaPets - Todos os direitos reservados.</p>
-    </footer>
 </body>
 
 </html>
