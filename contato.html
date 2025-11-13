@@ -13,6 +13,7 @@
 
 <body>
     <header>
+        <img src="img/logo-itapets.ico" alt="ITAPETS" width="50" height="50">
         <h1>Fale Conosco</h1>
     </header>
 
@@ -25,45 +26,66 @@
 
     <main class="form-container">
         <form>
-            <p class="titulo">Formulário de Contato</p>
+            <h2>Formulário de Contato</h2>
 
-            <fieldset>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
+            <div class="row"><!-- N consegui usar section aq pq n tem h2-h6 dentro, aí o W3C chiou :/ -->
+                <fieldset class="col-6">
+                    <label for="nome" class="campo">Nome</label>
                     <input type="text" id="nome" placeholder="Digite seu nome">
-                </div>
+                </fieldset>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
+                <fieldset class="col-6">
+                    <label for="email" class="campo">Email</label>
                     <input type="email" id="email" placeholder="seuemail@gmail.com">
-                </div>
-            </fieldset>
-
-            <p>Mensagem</p>
-            <textarea id="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
-            <p class="subtitulo">Gênero</p>
-            <div class="opcoes-inline">
-                <label><input type="radio" name="genero" value="masculino"> Masculino</label>
-                <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+                </fieldset>
             </div>
 
-            <p class="subtitulo">Serviços de interesse</p>
-            <div class="opcoes-colunas">
-                <label><input type="checkbox" value="banho"> Banho</label>
-                <label><input type="checkbox" value="tosa"> Tosa</label>
-                <label><input type="checkbox" value="consulta"> Consulta Veterinária</label>
+            <div class="row">
+                <fieldset class="col-6">
+                    <label for="telefone" class="campo">Telefone</label>
+                    <input type="tel" id="telefone" placeholder="()____-____">
+                </fieldset>
+        
+                <fieldset class="col-6">
+                    <label for="pets" class="campo">Tipo de Pet</label>
+                    <select id="pets">
+                        <option>Selecione...</option>
+                        <option>Cachorro</option>
+                        <option>Gato</option>
+                        <option>Pássaro</option>
+                        <option>Roedor</option>
+                    </select>
+                </fieldset>
             </div>
 
-            <p>Tipo de Pet</p>
-            <select id="pets">
-                <!-- <option>Selecione...</option> -->
-                <option>Cachorro</option>
-                <option>Gato</option>
-                <option>Pássaro</option>
-                <option>Roedor</option>
-            </select>
+            <div class="row">
+                <fieldset class="col-6">
+                    <legend>Gênero</legend>
+                    <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                    <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+                </fieldset>
+                <fieldset class="col-6">
+                    <legend>Serviços de interesse</legend>
+                    <label><input type="checkbox" value="banho"> Banho</label>
+                    <label><input type="checkbox" value="tosa"> Tosa</label>
+                    <label><input type="checkbox" value="consulta"> Consulta Veterinária</label>
+                </fieldset>
+            </div>
 
-            <button type="submit">Enviar</button>
+            <div class="row">
+                <fieldset class="col-12">
+                    <label for="mensagem" class="campo">Mensagem</label>
+                    <textarea id="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+                </fieldset>
+            </div>
+            
+            <div class="row">
+                <fieldset class="col-12">
+                    <button type="submit">Enviar</button>
+                </fieldset>
+            </div>
+
+            
         </form>
     </main>
 

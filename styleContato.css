@@ -12,20 +12,30 @@ body {
 }
 
 header {
+    display: grid;
+    grid-template-columns: 60px auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
     background-color: #f4a261;
-    padding: 20px;
-    text-align: center;
     color: white;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
 }
 
 header h1 {
     font-size: 28px;
+    text-align: left;
 }
 
 nav {
     background-color: #264653;
     padding: 10px 0;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
 
@@ -54,79 +64,34 @@ nav a:hover {
     font-style: normal;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: "Luckiest Guy", cursive;
 }
 
-footer {
-    background-color: #092733;
-    text-align: center;
-    padding: 15px 0;
-    color: white;
-    position: fixed;
-    bottom: 0;
+.row {
     width: 100%;
+    overflow: auto;
+    margin-bottom: 15px;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
 
 [class*="col-"] {
-    padding: 5px;
+    float: left;
+    padding: 10px;
 }
 
-.col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
 
 .form-container {
     width: 70%;
@@ -134,16 +99,16 @@ footer {
     background-color: #fff;
     padding: 20px 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 form label {
+    font-weight: bold;
     margin-bottom: 4px;
     display: block;
 }
 
-form p {
-    margin-bottom: 10px;
+label.campo {
     font-weight: bold;
 }
 
@@ -157,18 +122,6 @@ form select {
     background-color: #fafafa;
 }
 
-form input[type="radio"],
-form input[type="checkbox"] {
-    width: auto;
-    margin-right: 8px;
-    margin-bottom: 15px;
-}
-
-form textarea {
-    resize: vertical;
-    margin-bottom: 15px;
-}
-
 form button {
     background-color: #2a9d8f;
     color: white;
@@ -177,118 +130,69 @@ form button {
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.2s;
-    margin-top: 10px;
+    width: 100%;
 }
 
 form button:hover {
-    background-color: #264653;
-}
-
-.opcoes-inline {
-    display: flex;
-    gap: 20px;
-}
-
-.opcoes-colunas {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 15px;
-}
-
-.opcoes-colunas label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.opcoes-colunas input[type="checkbox"] {
-    width: auto;
-    margin: 0;
+    opacity: 0.85;
 }
 
 fieldset {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
     border: none;
+    padding: 0;
+    margin: 0;
 }
 
-.form-group {
-    flex: 1;
-}
-
-.form-group label {
+fieldset legend {
     font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    padding: 0;
     display: block;
 }
 
-.form-group input {
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    border: none;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #264653;
+    color: white;
+    position: fixed;
     width: 100%;
-    padding: 8px;
-    border: 2px solid #264653;
-    border-radius: 5px;
-    background-color: #fafafa;
+    bottom: 0;
+    left: 0;
 }
 
 @media (max-width: 600px) {
-
-    .col-1,
-    .col-2,
-    .col-3,
-    .col-4,
-    .col-5,
-    .col-6,
-    .col-7,
-    .col-8,
-    .col-9,
-    .col-10,
-    .col-11,
-    .col-12 {
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
         width: 100%;
+        padding: 5px;
     }
 
     .form-container {
         width: 90%;
     }
 
-    .opcoes-inline {
-        flex-direction: column;
-    }
-
-    form button {
-        width: 100%;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .form-container {
-        width: 90%;
-    }
-
-    form {
-        padding: 18px;
-    }
-
-    .opcoes-inline {
-        flex-direction: column;
-    }
-
-    form button {
-        width: 80%;
-    }
-
-    nav ul {
+    nav p {
         flex-direction: column;
         gap: 12px;
+    }
+
+    form button {
+        width: 100%;
     }
 }
