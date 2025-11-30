@@ -1,143 +1,232 @@
+/* Reset básico (Bootstrap já traz, mas mantemos box-sizing) */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Títulos com fonte especial */
 h1,
 h2 {
-    font-family: "Luckiest Guy", cursive;
+  font-family: "Luckiest Guy", cursive;
 }
 
+/* Corpo */
 body {
-    background-color: #fafafa;
-    color: #264653;
+  background-color: #fafafa;
+  color: #264653;
 }
 
+/* Layout principal */
 main {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "nav"
-        "section"
-        "footer";
-    grid-template-rows: auto auto 1fr auto;
-    min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "section"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
 }
 
+/* Header */
 header {
-    grid-area: header;
-    background-color: #f4a261;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 25px;
-    color: white;
+  grid-area: header;
+  background-color: #f4a261;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  color: white;
 }
 
+/* Navegação */
 nav {
-    grid-area: nav;
-    background-color: #264653;
-    padding: 20px 25px;
-    color: white;
-    text-align: center;
+  grid-area: nav;
+  background-color: #264653;
+  padding: 20px 25px;
+  color: white;
+  text-align: center;
 }
 
 nav h2 {
-    margin-bottom: 15px;
-    font-weight: bold;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 nav p {
-    display: flex;
-    justify-content: center;
-    gap: 65px;
-    flex-wrap: wrap;
-    font-size: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
 }
 
 nav a:hover {
-    color: #f4a261;
+  color: #f4a261;
 }
 
+/* Seção principal */
 section {
-    grid-area: section;
-    padding: 25px;
+  grid-area: section;
+  padding: 25px;
 }
 
+/* Rodapé */
 footer {
-    grid-area: footer;
-    background-color: #264653;
-    color: white;
-    display: grid;
-    place-items: center;
-    padding: 20px;
+  grid-area: footer;
+  background-color: #264653;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
 footer a {
-    font-size: 18px;
-    color: #f4a261;
-    margin-bottom: 10px;
+  font-size: 18px;
+  color: #f4a261;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
+/* Produtos container */
 .produtos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
 }
 
-
+/* Card de produto */
 .produtos article {
-    flex: 1 1 240px;
-    max-width: 300px;
-    background-color: #ffffff;
-    border: 1px solid #e5e5e5;
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
-    transition: 0.3s ease;
+  flex: 1 1 240px;
+  max-width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease;
 }
 
 .produtos article:hover {
-    transform: translateY(-6px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Imagem do produto */
 .produtos img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
+/* Título do produto */
 .produtos h3 {
-    font-size: 18px;
-    color: #264653;
-    margin: 8px 0;
-    font-weight: bold;
+  font-size: 18px;
+  color: #264653;
+  margin: 8px 0;
+  font-weight: bold;
 }
 
-
+/* Descrição */
 article p {
-    color: #666;
-    font-size: 14px;
-    margin: 6px 0 12px;
-    min-height: 40px;
+  color: #666;
+  font-size: 14px;
+  margin: 6px 0 12px;
+  min-height: 40px;
 }
 
+/* Preço */
 article span {
-    display: inline-block;
-    background-color: #f4a261;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    color: white;
-    font-size: 16px;
+  display: inline-block;
+  background-color: #f4a261;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+}
+
+/* Botão "Adicionar" (se não usar btn do Bootstrap) */
+.add-cart {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2a9d8f;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-cart:hover {
+  background: #21867a;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e76f51;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* Controles extras (search/filter/sort) */
+.itapets-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.itapets-controls .controls-left {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-hidden {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.itapets-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.itapets-controls .form-control,
+.itapets-controls .form-select {
+  min-width: 140px;
+}
+
+.price-filter input {
+  width: 90px;
 }
