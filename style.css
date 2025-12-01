@@ -1,22 +1,24 @@
-/* Reset básico (Bootstrap já traz, mas mantemos box-sizing) */
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Títulos com fonte especial */
 h1,
 h2 {
   font-family: "Luckiest Guy", cursive;
 }
 
-/* Corpo */
+
+section h2 {
+  font-size: 30px;
+  color: #264653 !important;
+}
+
 body {
   background-color: #fafafa;
   color: #264653;
 }
 
-/* Layout principal */
 main {
   display: grid;
   grid-template-areas:
@@ -28,7 +30,6 @@ main {
   min-height: 100vh;
 }
 
-/* Header */
 header {
   grid-area: header;
   background-color: #f4a261;
@@ -39,7 +40,12 @@ header {
   color: white;
 }
 
-/* Navegação */
+header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
 nav {
   grid-area: nav;
   background-color: #264653;
@@ -51,6 +57,7 @@ nav {
 nav h2 {
   margin-bottom: 15px;
   font-weight: bold;
+  font-size: 25px;
 }
 
 nav p {
@@ -62,21 +69,35 @@ nav p {
 }
 
 nav a {
+  position: relative;
   text-decoration: none;
-  color: inherit;
+  padding: 5px 0;
+  color: white;
 }
-
 nav a:hover {
   color: #f4a261;
 }
 
-/* Seção principal */
+nav p a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: #f4a261;
+  transition: 0.3s ease;
+}
+
+nav p a:hover::after {
+  width: 100%;
+}
+
 section {
   grid-area: section;
   padding: 25px;
 }
 
-/* Rodapé */
 footer {
   grid-area: footer;
   background-color: #264653;
@@ -95,7 +116,6 @@ footer a {
   text-decoration: none;
 }
 
-/* Produtos container */
 .produtos {
   display: flex;
   flex-wrap: wrap;
@@ -103,7 +123,6 @@ footer a {
   justify-content: center;
 }
 
-/* Card de produto */
 .produtos article {
   flex: 1 1 240px;
   max-width: 300px;
@@ -112,15 +131,15 @@ footer a {
   border-radius: 14px;
   padding: 20px;
   text-align: center;
-  transition: 0.3s ease;
+  transition: border 0.2s;
 }
 
 .produtos article:hover {
   transform: translateY(-6px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid orange;
 }
 
-/* Imagem do produto */
 .produtos img {
   width: 100px;
   height: 100px;
@@ -128,23 +147,22 @@ footer a {
   margin-bottom: 10px;
 }
 
-/* Título do produto */
 .produtos h3 {
   font-size: 18px;
   color: #264653;
   margin: 8px 0;
   font-weight: bold;
+  text-decoration: none;
 }
 
-/* Descrição */
 article p {
   color: #666;
   font-size: 14px;
   margin: 6px 0 12px;
   min-height: 40px;
+  text-decoration: none;
 }
 
-/* Preço */
 article span {
   display: inline-block;
   background-color: #f4a261;
@@ -155,23 +173,6 @@ article span {
   font-size: 16px;
 }
 
-/* Botão "Adicionar" (se não usar btn do Bootstrap) */
-.add-cart {
-  margin-top: 8px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  background: #2a9d8f;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.add-cart:hover {
-  background: #21867a;
-}
-
-/* Toast */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -191,7 +192,6 @@ article span {
   transform: translateX(-50%) translateY(-10px);
 }
 
-/* Controles extras (search/filter/sort) */
 .itapets-controls {
   display: flex;
   justify-content: space-between;
@@ -214,19 +214,54 @@ article span {
   transform: translateY(12px);
 }
 
-.itapets-controls {
+
+.itapets-controls { 
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;  
   gap: 16px;
   align-items: center;
+  justify-content: left;
   margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(90deg, #ff8a3d, #264653);
+  z-index: 50;
+  padding: 12px 0;
+  color: white;
+  border-radius: 8px;
 }
 
 .itapets-controls .form-control,
 .itapets-controls .form-select {
   min-width: 140px;
+  border: none;
+  box-shadow: none;
+  background: white;
+  color: #264653;
+  margin-left: 5px;
 }
+
 
 .price-filter input {
   width: 90px;
+}
+
+.itapets-controls select,
+.itapets-controls input {
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+.itapets-controls::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  z-index: -1;
 }

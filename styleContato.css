@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #2a9d8f;
+    color: #f4a261;
     opacity: 0.8;
 }
 
@@ -160,7 +160,7 @@ form select {
 }
 
 form button {
-    background-color: #2a9d8f;
+    background-color: #e76f51;
     color: white;
     padding: 10px 22px;
     border: none;
@@ -219,10 +219,7 @@ footer a {
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    font-size: 20px;
 }
 
 input.invalid, textarea.invalid, select.invalid {

@@ -112,18 +112,21 @@ telefoneInput?.addEventListener('input', (e) => {
     e.target.value = value;
 });
 
+// FIM DO CONTATO.HTML
+
+// PARTE DO INDEX.HTML
+
 $(document).ready(function () {
     const $produtosContainer = $('.produtos');
     if ($produtosContainer.length === 0) return;
 
-    // --- Utility ---
+
     const parsePrice = txt => {
         if (!txt) return 0;
         const num = txt.replace(/[^0-9,.-]+/g, '').replace(',', '.');
         return parseFloat(num) || 0;
     };
 
-    // --- Inject UI bar (sem categoria e sem hamburger) ---
     const controls = `
     <div class="itapets-controls d-flex flex-wrap gap-3 align-items-center mb-4">
   <input class="search form-control" type="search" placeholder="Buscar produtos..." aria-label="buscar produtos" style="max-width: 200px;">
@@ -147,7 +150,7 @@ $(document).ready(function () {
   `;
     $produtosContainer.before(controls);
 
-    // --- Build product data model ---
+
     const $productNodes = $produtosContainer.find('article');
     const products = $productNodes.map(function () {
         const $node = $(this);
@@ -164,22 +167,7 @@ $(document).ready(function () {
         };
     }).get();
 
-    // --- Add 'Adicionar' buttons ---
-    products.forEach(p => {
-        if (p.node.find('.add-cart').length) return;
-        const $btn = $('<button>', {
-            type: 'button',
-            class: 'add-cart btn btn-success mt-2',
-            text: 'Adicionar'
-        });
-        if (p.priceEl.length) p.priceEl.after($btn);
-        else p.node.append($btn);
-        $btn.on('click', () => {
-            showToast(`${p.title || 'Produto'} adicionado`);
-        });
-    });
 
-    // --- Search / Sort / Price filter logic ---
     const $searchInput = $('.search');
     const $sortSelect = $('.sort');
     const $minPriceInput = $('.min-price');
@@ -191,7 +179,7 @@ $(document).ready(function () {
         const minP = parseFloat($minPriceInput.val()) || 0;
         const maxP = parseFloat($maxPriceInput.val()) || Infinity;
 
-        // filter
+
         products.forEach(p => {
             const matchSearch = q === '' || p.title.toLowerCase().includes(q);
             const matchPrice = p.price >= minP && p.price <= maxP;
@@ -199,7 +187,7 @@ $(document).ready(function () {
             p.node.toggleClass('d-none', !p.visible);
         });
 
-        // sort visible nodes
+
         const visible = products.filter(p => p.visible);
         if (sort !== 'default') {
             let sorted = visible.slice();
@@ -219,7 +207,6 @@ $(document).ready(function () {
 
     applyFiltersAndSort();
 
-    // --- Scroll animations ---
     const observer = new IntersectionObserver(entries => {
         entries.forEach(ent => {
             const el = ent.target;
@@ -236,7 +223,7 @@ $(document).ready(function () {
         observer.observe(p.node[0]);
     });
 
-    // --- Accessibility shortcut ---
+  
     $(window).on('keydown', e => {
         if (e.key === '/') {
             if (document.activeElement !== $searchInput[0]) {
@@ -246,3 +233,43 @@ $(document).ready(function () {
         }
     });
 });
+
+document.querySelectorAll("a").forEach(a => {
+    a.classList.add("text-decoration-none");
+});
+
+// FIM DA PARTE DO INDEX.HTML
+
+// PARTE DOS PRODUTOS
+
+$(document).ready(function () {
+
+    const precoBase = parseFloat($('.preco').text().replace('R$', '').replace(',', '.'));
+    const $inputQtd = $('.quantidade');
+    const $total = $('.preco-total');
+
+    function atualizarTotal() {
+        const qtd = parseInt($inputQtd.val());
+        const total = (precoBase * qtd).toFixed(2).replace('.', ',');
+        $total.text(`Total: R$ ${total}`);
+    }
+
+    $('.mais').click(function () {
+        let qtd = parseInt($inputQtd.val());
+        $inputQtd.val(qtd + 1);
+        atualizarTotal();
+    });
+
+    $('.menos').click(function () {
+        let qtd = parseInt($inputQtd.val());
+        if (qtd > 1) {
+            $inputQtd.val(qtd - 1);
+            atualizarTotal();
+        }
+    });
+
+    atualizarTotal();
+});
+
+
+// FIM DA PARTE DOS PRODUTOS
