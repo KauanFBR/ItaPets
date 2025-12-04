@@ -223,7 +223,7 @@ $(document).ready(function () {
         observer.observe(p.node[0]);
     });
 
-  
+
     $(window).on('keydown', e => {
         if (e.key === '/') {
             if (document.activeElement !== $searchInput[0]) {
